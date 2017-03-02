@@ -1,8 +1,8 @@
 <?php
 function get_categories() {
     global $db;
-    $query = 'SELECT * FROM categories
-              ORDER BY categoryID';
+    $query = 'SELECT * FROM categories_guitar1
+                  ORDER BY categoryID';
     $statement = $db->prepare($query);
     $statement->execute();
     return $statement;    
