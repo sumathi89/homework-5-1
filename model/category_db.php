@@ -10,7 +10,7 @@ function get_categories() {
 
 function get_category_name($category_id) {
     global $db;
-    $query = 'SELECT * FROM categories
+    $query = 'SELECT * FROM categories_guitar1
               WHERE categoryID = :category_id';    
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);

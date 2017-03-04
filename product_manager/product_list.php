@@ -19,6 +19,15 @@
     </aside>
 
     <section>
+    <?php
+    // Get products for selected category
+    $queryProducts = 'SELECT * FROM products_guitar1 WHERE categoryID = :category_id ORDER BY productID';
+    $statement3 =$db->prepare($queryProducts);
+    $statement3->bindValue(':category_id',$category_id);
+    $statement3->execute();
+    $products = $statement3->fetchAll();
+    $statement3->closeCursor();
+?>
         <!-- display a table of products -->
         <h2><?php echo $category_name; ?></h2>
         <table>
@@ -46,7 +55,8 @@
             <?php endforeach; ?>
         </table>
         <p><a href="?action=show_add_form">Add Product</a></p>
-        <p class="last_paragraph"><a href="?action=list_categories">List Categories</a></p>        
+	<p class="last_paragraph"><a href="?action=list_categories">List
+	    Categories</a></p>   
     </section>
 </main>
 <?php include '../view/footer.php'; ?>
