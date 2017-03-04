@@ -1,12 +1,4 @@
 <?php include '../view/header.php'; ?>
-<?php 
-// Get all categories
-$query = 'SELECT * FROM categories_guitar1 ORDER BY categoryID';
-$statement = $db->prepare($query);
-$statement->execute();
-$categories = $statement->fetchAll();
-$statement->closeCursor();
-?>
 <main>
 
     <h1>Category List</h1>
