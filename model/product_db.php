@@ -2,7 +2,7 @@
 function get_products_by_category($category_id) {
     global $db;
     $query = 'SELECT * FROM products_guitar1
-              WHERE products.categoryID = :category_id
+              WHERE products_guitar1.categoryID = :category_id
               ORDER BY productID';
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $category_id);
