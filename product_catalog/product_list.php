@@ -2,7 +2,7 @@
 <main>
     <aside>
         <h1>Categories</h1>
-      	<?php include 'categories_nav.php'; ?>
+	 <?php include '../view/categories_nav.php'; ?>
     </aside>
     <section>
         <h1><?php echo $category_name; ?></h1>
