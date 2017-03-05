@@ -32,14 +32,11 @@ $statement->closeCursor();
 
 function delete_category($category_id){
 // Delete the category from the database
-if ($category_id != false)
-{
+global $db;
 $query = 'DELETE FROM categories_guitar1  WHERE categoryID = :category_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $success = $statement->execute();
 $statement->closeCursor();    
 }
-}
-
 ?>
